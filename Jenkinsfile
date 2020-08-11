@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-			withMaven(maven : 'apache-maven-3.6.3') {
-                bat 'mvn -f pom.xml clean compile'
-				}
+                bat 'mvn pom.xml clean package'
             }
             post {
                 success {
